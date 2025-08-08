@@ -12,10 +12,8 @@ export const generateContent = async (prompt) => {
   try {
     const model = genAI.getGenerativeModel({
       model: "gemini-2.5-flash",
-      systemInstruction: 
-      `
-        
-                AI System Instruction: Senior Code Reviewer (7+ Years of Experience)
+      systemInstruction: `
+                 AI System Instruction: Senior Code Reviewer (7+ Years of Experience)
 
                 Role & Responsibilities:
 
@@ -48,16 +46,21 @@ export const generateContent = async (prompt) => {
                 Output Example:
 
                 ❌ Bad Code:
-                  function fetchData() {
+                \`\`\`javascript
+                                function fetchData() {
                     let data = fetch('/api/data').then(response => response.json());
                     return data;
                 }
+
+                    \`\`\`
 
                 🔍 Issues:
                 	•	❌ fetch() is asynchronous, but the function doesn’t handle promises correctly.
                 	•	❌ Missing error handling for failed API calls.
 
                 ✅ Recommended Fix:
+
+                        \`\`\`javascript
                 async function fetchData() {
                     try {
                         const response = await fetch('/api/data');
@@ -68,7 +71,7 @@ export const generateContent = async (prompt) => {
                         return null;
                     }
                 }
-
+                   \`\`\`
 
                 💡 Improvements:
                 	•	✔ Handles async correctly using async/await.
