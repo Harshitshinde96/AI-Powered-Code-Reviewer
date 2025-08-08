@@ -1,0 +1,46 @@
+{
+  "compilerOptions": {
+    // === File Structure ===
+    "rootDir": "./src",
+    "outDir": "./dist",
+
+    // === JavaScript Target & Module System ===
+    "target": "es2020", // Modern syntax, safe for Node.js 14+
+    "module": "nodenext", // Use "ESNext" if you're using ESM & set "type": "module" in package.json
+    "moduleResolution": "nodenext", // Standard Node.js resolution
+
+
+    // === Runtime & Interop ===
+    "lib": ["ESNext"], // Full latest JS support
+    "types": ["node"], // Enable Node.js types
+    "esModuleInterop": true, // Enable interop with commonjs modules
+    "resolveJsonModule": true, // Allow importing .json files
+
+    // === Build Tools ===
+    "incremental": true, // Speed up builds with incremental compilation
+    "sourceMap": true, // Useful for debugging
+    "declaration": true, // Generate .d.ts files for reusable code
+    "declarationMap": true, // Map types to source for better DX
+
+    // === Type Safety ===
+    "strict": true, // Enable all strict type-checking
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "exactOptionalPropertyTypes": true,
+    "noUncheckedIndexedAccess": true,
+
+    // === Module Aliases (Optional) ===
+    "baseUrl": "./src",
+    "paths": {
+      "@/*": ["*"]
+    },
+
+    // === Other ===
+    "skipLibCheck": true // Speeds up builds by skipping type checks on dependencies
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
+}
